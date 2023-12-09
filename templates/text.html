@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sarcasm Detection</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon/sentiment.png') }}">
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap">
+  <style>
+       body {
+            background-image: url('https://wallup.net/wp-content/uploads/2017/11/17/200514-dark-blue.jpg'); /* Replace with your image URL */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: Arial, sans-serif;
+            color: #ffffff;
+            text-align: center;
+            height: 100vh;
+            margin: 0;
+            
+            padding: 0;
+            
+        }
+        h1 {
+            font-size: 36px;
+            margin-top: 50px;
+        }
+        h2 {
+            color: #115aa7;
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        main {
+    text-align: center;
+    width: 80%;
+    max-width: 600px;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 100px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+
+    .form-group {
+    margin-bottom: 100px;
+    width: 100%; 
+    margin: 2 auto; 
+    }
+    label {
+    color:#115aa7; 
+    font-size: 16px; 
+}
+
+
+    .btn-primary {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .jumbotron {
+      color:rgb(218, 22, 22); 
+      font-size: 20px; 
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      padding: 15px 0;
+      text-align: center;
+    }
+
+    .typewriter {
+      overflow: hidden;
+      border-right: 0.15em solid orange;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: 0.15em;
+      animation: typing 1s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink-caret {
+      from,
+      to {
+        border-color: transparent;
+      }
+      50% {
+        border-color: orange;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Sarcasm Text Detection</h1>
+  <main>
+    <!-- Sarcasm Detection Form -->
+    <form method="POST" action="{{ url_for('prediction') }}" class="txtarea1">
+      <div class="form-group">
+        <label for="text">Enter your text:</label><br><br>
+        <textarea class="form-control" id="text" name="text"cols="50" rows="6"></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Detect Sarcasm</button>
+    </form>
+
+    <!-- Result Display -->
+    <div class="jumbotron hero text-center">
+      <h2>Here is Your Result...</h2>
+    </div>
+    <br />
+
+    <div class="jumbotron">
+      {% if response == 0 %}
+        <div class="typewriter">
+          <div class="typewriter-text">Not a Sarcastic.</div>
+        </div>
+      {% endif %} 
+      {% if response == 1 %}
+        <div class="typewriter">
+          <div class="typewriter-text"> Sarcastic.</div>
+        </div>
+      {% endif %}
+    </div>
+  </main>
+  <div class="footer">
+    <form method="GET" action="/">
+      <button type="submit" class="btn btn-primary">Try Again</button>
+    </form>
+    </div>
+</body>
+</html>

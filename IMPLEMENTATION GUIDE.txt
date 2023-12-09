@@ -1,0 +1,26 @@
+ABSTRACT
+--------------------------------------------------------------
+Sarcasm Detection from Text:
+Utilizes a pre-trained model with a TF-IDF vectorizer to categorize the input text into sarcastic and non-sarcastic categories.
+Displays the predicted sarcasm label for the entered text.
+Sarcasm Detection from Audio:
+Accepts audio files uploaded by users (supports .wav formats) and transcribes the spoken content into text using Google's speech recognition service.
+Performs sentiment analysis on the transcribed text using the VADER sentiment analysis tool.
+Differentiates between sarcasm and non-sarcasm in the transcribed text based on a hypothetical sentiment score threshold.
+Presents the sentiment score and corresponding sarcasm label (Sarcasm or Not a Sarcasm) to users.
+-------------------------------------------------------------
+IMPLEMENTATION
+-------------------------------------------------------------
+1.EXTRACT ZIP FILE
+2.OPEN FILE DIRECTORY IN CMD (COMMAND PROMPT)
+3.AFTER OPENING CMD 
+c:/hp:/:Sarcasm Detection Audio and Text-(now type)
+
+
+pip install -r requirements.txt
+
+python main.py
+
+4.NOW ITS RUNNING COPY AND PASTE URL IN BROWSER
+
+http://localhost:5000/

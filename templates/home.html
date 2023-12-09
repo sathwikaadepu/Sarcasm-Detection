@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sarcasm Analysis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('https://watermark.lovepik.com/photo/40023/3030.jpg_wh1200.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4285F4;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #3367D6;
+        }
+
+        .prompt-buttons {
+            margin-top: 20px;
+        }
+
+        .btn-dark {
+            background-color: #5285b8;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #centerDesign {
+            width: 300px;
+            height: 300px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+    <link rel="icon" href="https://cdn.vectorstock.com/i/preview-1x/76/41/sarcasm-hand-drawn-lettering-isolated-template-vector-31727641.jpg" type="image/x-icon">
+</head>
+<body>
+    <div id="container">
+        <div id="centerDesign">
+            <h1>Welcome<br> To<br> Sarcasm Analysis WebPage<br> &#x1F64F;</h1>
+
+            
+        </div>
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <div class="prompt-buttons">
+                <button type="button" id="btn-prompt-media" class="btn btn-dark"
+                    onclick="redirectToTextAnalysis()">Sarcasm Text Analysis - Click Here</button>
+            </div>
+        </div>
+
+        <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <div class="prompt-buttons">
+                <button type="button" id="btn-prompt-media2" class="btn btn-dark"
+                    onclick="redirectToAudioAnalysis()">Sarcasm Audio Analysis- Click Here</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function redirectToTextAnalysis() {
+            window.location.href = '/text';  // Redirects to the text analysis route (/text-analysis)
+        }
+    
+        function redirectToAudioAnalysis() {
+            window.location.href = '/index';  // Redirects to the audio analysis route (/index)
+        }
+    </script>
+    
+</body>
+</html>
